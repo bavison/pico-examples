@@ -2,6 +2,9 @@ add_executable(pa1010d_i2c
         pa1010d_i2c.c
         )
 
+# we use VLAs, which must be explicitly enabled for IAR toolchain
+set(CMAKE_IAR_C_ALLOW_VLA 1)
+
 # pull in common dependencies and additional i2c hardware support
 target_link_libraries(pa1010d_i2c pico_stdlib hardware_i2c)
 
