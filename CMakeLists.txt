@@ -3,6 +3,11 @@ cmake_minimum_required(VERSION 3.12)
 # Pull in SDK (must be before project)
 include(pico_sdk_import.cmake)
 
+# Support Clang builds
+# Ideally this would have lived in the SDK, but it doesn't appear to be
+# possible to override the policy stack, so it has to be set here
+cmake_policy(SET CMP0123 NEW)
+
 project(pico_examples C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
