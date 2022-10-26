@@ -253,8 +253,7 @@ int main() {
     oled_init();
 
     // initialize render area for entire frame (128 pixels by 4 pages)
-    struct render_area frame_area = {start_col: 0, end_col : OLED_WIDTH - 1, start_page : 0, end_page : OLED_NUM_PAGES -
-                                                                                                        1};
+    struct render_area frame_area = { .start_col = 0, .end_col = OLED_WIDTH - 1, .start_page = 0, .end_page = OLED_NUM_PAGES - 1 };
     calc_render_area_buflen(&frame_area);
 
     // zero the entire display
@@ -271,7 +270,7 @@ int main() {
     }
 
     // render 3 cute little raspberries
-    struct render_area area = {start_col: 0, end_col : IMG_WIDTH - 1, start_page : 0, end_page : OLED_NUM_PAGES - 1};
+    struct render_area area = { .start_col = 0, .end_col = IMG_WIDTH - 1, .start_page = 0, .end_page = OLED_NUM_PAGES - 1 };
     calc_render_area_buflen(&area);
     render(raspberry26x32, &area);
     for (int i = 1; i < 3; i++) {
