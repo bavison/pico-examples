@@ -349,10 +349,10 @@ int main() {
 
     // Initialize render area for entire frame (SSD1306_WIDTH pixels by SSD1306_NUM_PAGES pages)
     struct render_area frame_area = {
-        start_col: 0,
-        end_col : SSD1306_WIDTH - 1,
-        start_page : 0,
-        end_page : SSD1306_NUM_PAGES - 1
+        .start_col = 0,
+        .end_col = SSD1306_WIDTH - 1,
+        .start_page = 0,
+        .end_page = SSD1306_NUM_PAGES - 1
         };
 
     calc_render_area_buflen(&frame_area);
