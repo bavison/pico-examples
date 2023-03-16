@@ -1,0 +1,6 @@
+Debug/
+*.dep
+*.ewt
+*.log
+*.pio.h
+settings/
